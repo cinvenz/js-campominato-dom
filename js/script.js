@@ -1,10 +1,12 @@
 const eleGrid = document.querySelector('.grid')
 const eleBtn = document.querySelector('.btn')
 const eleContainer = document.querySelector('.container-grid')
+const eleClickBomb = document.querySelector('.container-clickbomb')
 
 function getRandomInteger(min, max) {
     return Math.floor(Math.random() * (max - min + 1) ) + min;
 }
+
 
 eleBtn.addEventListener('click', function() {
     let eleSelect = document.getElementById('select').value
@@ -27,9 +29,9 @@ eleBtn.addEventListener('click', function() {
 
             eleCell.innerHTML += `<div">${i}</div>`;
             
-            eleCell.addEventListener('click', function(){
+            eleCell.addEventListener('click', function(remove){
                 if (!arrRandoms.includes(i)) {
-                this.classList.toggle('active')
+                this.classList.toggle('active');
                 
                     
                 } else {
@@ -37,10 +39,19 @@ eleBtn.addEventListener('click', function() {
                 const listCell =  eleGrid.querySelectorAll('.cell');
                     for (let i = 1; i < listCell.length; i++) {
                         if(arrRandoms.includes(i)){
-                            listCell[i].classList.add('activebomb')
+                            listCell[i].classList.add('activebomb');
+
                         }
                     }
 
+                    setTimeout(function () {
+                        eleContainer.classList.add('dnone');
+                        eleClickBomb.classList.remove('dnone');
+                    }, 500)
+
+                    setTimeout(function () {
+                       alert('HAI PERSO')
+                    }, 1000)
                 }
                 
             })
@@ -79,6 +90,15 @@ eleBtn.addEventListener('click', function() {
                         }
                     }
 
+                    setTimeout(function () {
+                        eleContainer.classList.add('dnone');
+                        eleClickBomb.classList.remove('dnone');
+                    }, 500)
+
+                    setTimeout(function () {
+                       alert('HAI PERSO')
+                    }, 1000)
+
                 }
                 
             })
@@ -116,6 +136,15 @@ eleBtn.addEventListener('click', function() {
                             listCell[i].classList.add('activebomb')
                         }
                     }
+
+                    setTimeout(function () {
+                        eleContainer.classList.add('dnone');
+                        eleClickBomb.classList.remove('dnone');
+                    }, 500)
+
+                    setTimeout(function () {
+                       alert('HAI PERSO')
+                    }, 1000)
 
                 }
                 

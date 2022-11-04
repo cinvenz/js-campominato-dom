@@ -21,6 +21,7 @@ main {
     background-color: #7FFFD4;
 }
 
+
 .grid {
     margin: auto;
     /* border: 1px solid black; */
@@ -74,13 +75,13 @@ main {
 }
 
 .activebomb {
-    background-image: url(../img/boom.jpg);
+    background-image: url(../img/bomba.jpg);
     background-size: cover;
     background-position: center;
 }
 
 .dnone {
-    display: none;
+    display: none !important;
 }
 
 .dblock {
@@ -89,5 +90,13 @@ main {
 
 .mine {
     font-size: 3rem;
+}
+
+.container-clickbomb {
+    border-bottom: 2px solid black;
+    height: 496px;
+    background-image: url(../img/game\ over\ 2.jpg);
+    background-size: cover;
+    background-position: center;
 }
 
