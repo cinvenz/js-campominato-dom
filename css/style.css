@@ -74,7 +74,9 @@ main {
 }
 
 .activebomb {
-    background-color: red;
+    background-image: url(../img/boom.jpg);
+    background-size: cover;
+    background-position: center;
 }
 
 .dnone {
@@ -83,5 +85,9 @@ main {
 
 .dblock {
     display: block;
+}
+
+.mine {
+    font-size: 3rem;
 }
 

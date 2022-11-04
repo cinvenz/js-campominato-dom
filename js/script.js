@@ -1,5 +1,10 @@
 const eleGrid = document.querySelector('.grid')
 const eleBtn = document.querySelector('.btn')
+const eleContainer = document.querySelector('.container-grid')
+
+function getRandomInteger(min, max) {
+    return Math.floor(Math.random() * (max - min + 1) ) + min;
+}
 
 eleBtn.addEventListener('click', function() {
     let eleSelect = document.getElementById('select').value
@@ -23,11 +28,18 @@ eleBtn.addEventListener('click', function() {
             eleCell.innerHTML += `<div">${i}</div>`;
             
             eleCell.addEventListener('click', function(){
-                if (arrRandoms.includes(i)) {
-                this.classList.toggle('activebomb')
+                if (!arrRandoms.includes(i)) {
+                this.classList.toggle('active')
+                
                     
                 } else {
-                this.classList.toggle('active')
+                this.classList.toggle('activebomb')
+                const listCell =  eleGrid.querySelectorAll('.cell');
+                    for (let i = 1; i < listCell.length; i++) {
+                        if(arrRandoms.includes(i)){
+                            listCell[i].classList.add('activebomb')
+                        }
+                    }
 
                 }
                 
@@ -54,11 +66,18 @@ eleBtn.addEventListener('click', function() {
             eleCell.innerHTML += `<div">${i}</div>`;
             
             eleCell.addEventListener('click', function(){
-                if (arrRandoms.includes(i)) {
-                this.classList.toggle('activebomb')
+                if (!arrRandoms.includes(i)) {
+                this.classList.toggle('active')
+                
                     
                 } else {
-                this.classList.toggle('active')
+                this.classList.toggle('activebomb')
+                const listCell =  eleGrid.querySelectorAll('.cellhard');
+                    for (let i = 1; i < listCell.length; i++) {
+                        if(arrRandoms.includes(i)){
+                            listCell[i].classList.add('activebomb')
+                        }
+                    }
 
                 }
                 
@@ -85,11 +104,18 @@ eleBtn.addEventListener('click', function() {
             eleCell.innerHTML += `<div">${i}</div>`;
             
             eleCell.addEventListener('click', function(){
-                if (arrRandoms.includes(i)) {
-                this.classList.toggle('activebomb')
+                if (!arrRandoms.includes(i)) {
+                this.classList.toggle('active')
+                
                     
                 } else {
-                this.classList.toggle('active')
+                this.classList.toggle('activebomb')
+                const listCell =  eleGrid.querySelectorAll('.cellcrazy');
+                    for (let i = 1; i < listCell.length; i++) {
+                        if(arrRandoms.includes(i)){
+                            listCell[i].classList.add('activebomb')
+                        }
+                    }
 
                 }
                 
@@ -97,7 +123,5 @@ eleBtn.addEventListener('click', function() {
         }
     }
 
-    function getRandomInteger(min, max) {
-        return Math.floor(Math.random() * (max - min + 1) ) + min;
-    }
+    
 });
