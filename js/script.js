@@ -37,6 +37,15 @@ eleBtn.addEventListener('click', function() {
        
     
     } else if (document.getElementById('select').value == 'Hard') {
+        const arrRandoms = [];
+        for (let i = 1; i <= 16; i++) {
+            // generare un numero random univoco
+            let randomNumber;
+            do {
+                randomNumber = getRandomInteger(1, 81); // attenzione a non mettere un range minore delle iterazioni del ciclo for
+            } while (arrRandoms.includes(randomNumber))
+            arrRandoms.push(randomNumber);
+        }
         for (let i = 1; i <= 81; i++) {
             const eleCell = document.createElement('div');
             eleCell.classList.add('cellhard');
@@ -45,11 +54,29 @@ eleBtn.addEventListener('click', function() {
             eleCell.innerHTML += `<div">${i}</div>`;
             
             eleCell.addEventListener('click', function(){
+                if (arrRandoms.includes(i)) {
+                this.classList.toggle('activebomb')
+                    
+                } else {
                 this.classList.toggle('active')
-               
+
+                }
+                
             })
-        }        
+        }
+
+       
+               
     } else {
+        const arrRandoms = [];
+        for (let i = 1; i <= 16; i++) {
+            // generare un numero random univoco
+            let randomNumber;
+            do {
+                randomNumber = getRandomInteger(1, 49); // attenzione a non mettere un range minore delle iterazioni del ciclo for
+            } while (arrRandoms.includes(randomNumber))
+            arrRandoms.push(randomNumber);
+        }
         for (let i = 1; i <= 49; i++) {
             const eleCell = document.createElement('div');
             eleCell.classList.add('cellcrazy');
@@ -58,8 +85,14 @@ eleBtn.addEventListener('click', function() {
             eleCell.innerHTML += `<div">${i}</div>`;
             
             eleCell.addEventListener('click', function(){
+                if (arrRandoms.includes(i)) {
+                this.classList.toggle('activebomb')
+                    
+                } else {
                 this.classList.toggle('active')
-               
+
+                }
+                
             })
         }
     }
