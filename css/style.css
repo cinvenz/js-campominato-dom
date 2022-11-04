@@ -1,0 +1,87 @@
+body {
+    height: 100vh;
+}
+
+.logo {
+    width: 4rem;
+}
+
+h1 {
+    font-size: 2rem;
+}
+
+.btn {
+    background-color: lightgray;
+    color: black;
+    font-weight: bold;
+    padding: 0.1rem 1.5rem;
+}
+
+main {
+    background-color: #7FFFD4;
+}
+
+.grid {
+    margin: auto;
+    /* border: 1px solid black; */
+    width: 400px;
+    height: 400px;
+    flex-wrap: wrap;
+}
+
+.cell {
+    border:1px solid black;
+    width: calc(100% / 10);
+    height: calc(100% / 10);
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cellhard {
+    border:1px solid black;
+    width: calc(100% / 9);
+    height: calc(100% / 9);
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cellcrazy {
+    border:1px solid black;
+    width: calc(100% / 7);
+    height: calc(100% / 7);
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cell.active {
+    background-color: royalblue;
+}
+
+.cellhard.active {
+    background-color: royalblue;
+
+}
+
+.cellcrazy.active {
+    background-color: royalblue;
+
+}
+
+.activebomb {
+    background-color: saddlebrown;
+}
+
+.dnone {
+    display: none;
+}
+
+.dblock {
+    display: block;
+}
+
