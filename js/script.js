@@ -3,6 +3,8 @@ const eleBtn = document.querySelector('.btn')
 const eleContainer = document.querySelector('.container-grid')
 const eleClickBomb = document.querySelector('.container-clickbomb')
 
+let count = 0
+
 function getRandomInteger(min, max) {
     return Math.floor(Math.random() * (max - min + 1) ) + min;
 }
@@ -28,11 +30,13 @@ eleBtn.addEventListener('click', function() {
             eleGrid.append(eleCell);
 
             eleCell.innerHTML += `<div">${i}</div>`;
+
+            count = 0;
             
             eleCell.addEventListener('click', function(remove){
                 if (!arrRandoms.includes(i)) {
                 this.classList.toggle('active');
-                
+                count += 1;
                     
                 } else {
                 this.classList.toggle('activebomb')
@@ -50,7 +54,7 @@ eleBtn.addEventListener('click', function() {
                     }, 500)
 
                     setTimeout(function () {
-                       alert('HAI PERSO')
+                        alert(`HAI PERSO il tuo punteggio finale é ${count} punti`);
                     }, 1000)
                 }
                 
@@ -79,6 +83,7 @@ eleBtn.addEventListener('click', function() {
             eleCell.addEventListener('click', function(){
                 if (!arrRandoms.includes(i)) {
                 this.classList.toggle('active')
+                count += 1;
                 
                     
                 } else {
@@ -96,7 +101,7 @@ eleBtn.addEventListener('click', function() {
                     }, 500)
 
                     setTimeout(function () {
-                       alert('HAI PERSO')
+                       alert(`HAI PERSO il tuo punteggio finale é ${count} punti`);
                     }, 1000)
 
                 }
@@ -126,6 +131,7 @@ eleBtn.addEventListener('click', function() {
             eleCell.addEventListener('click', function(){
                 if (!arrRandoms.includes(i)) {
                 this.classList.toggle('active')
+                count += 1;
                 
                     
                 } else {
@@ -143,7 +149,7 @@ eleBtn.addEventListener('click', function() {
                     }, 500)
 
                     setTimeout(function () {
-                       alert('HAI PERSO')
+                        alert(`HAI PERSO il tuo punteggio finale é ${count} punti`);
                     }, 1000)
 
                 }
